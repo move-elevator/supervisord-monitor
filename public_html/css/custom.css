@@ -1,5 +1,8 @@
 body{
 	cursor: default;
+    padding: 0 !important;
+    background-image: url("../img/background.png");
+    background-repeat: repeat;
 }
 .popover {
 	max-width:	450px;
@@ -49,3 +52,107 @@ body{
 .icon-orange {
   background-image: url("/img/glyphicons-halflings-orange.png") !important;
 }
+
+.table {
+    width: 100%;
+}
+
+.table td {
+    padding: 50px 0 50px 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    border: none;
+}
+
+.table th {
+    background-image: linear-gradient(to bottom,#222,#111);
+    background-repeat: repeat-x;
+    color: #ffffff;
+}
+
+.table th a {
+    color: #ffffff;
+}
+
+
+.table tr {
+    display: inline-table;
+    width: 100%;
+    margin: 10px 0 10px 0;
+    border-radius: 20px;
+}
+
+
+.table tr td:first-child {
+    padding: 50px 0 50px 10px;
+}
+
+.alert-tr td {
+    background-color: #ff6d69 !important;
+    animation-name: alert-bg;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.normal-tr td {
+    background-color: #006400 !important;
+}
+
+.container {
+    width: 100%;
+}
+
+.btn {
+    padding: 10px !important;
+}
+
+/* The animation code */
+@keyframes alert-bg {
+    from {background-color: #ff6d69;}
+    to {background-color: rgba(255, 117, 112, 0.27);}
+}
+
+.pop {
+    margin: -10px 0 0 10px;
+}
+
+.omg-alarm {
+    background-image: url("../img/pornstar.png");
+    width: 394px;
+    height: 389px;
+    background-repeat: no-repeat;
+    position: fixed;
+    animation-name: omg-image;
+    animation-duration: 0.5s;
+    animation-iteration-count: 10;
+    top: 50%;
+    left: 50%;
+    margin-top: -197px;
+    margin-left: -195px;
+}
+
+@keyframes omg-image {
+    from {opacity: 0; }
+    to {opacity: 1;}
+}
+
+.navbar-fixed-top {
+    margin: 0 !important;
+}
+
+.table th {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.row {
+    margin: 0 !important;
+}
+
+.table { border-collapse: separate; }
+.table tr td:first-child { border-top-left-radius: 15px; }
+.table tr td:last-child { border-top-right-radius: 15px; }
+.table tr td:first-child { border-bottom-left-radius: 15px; }
+.table tr td:last-child { border-bottom-right-radius: 15px; }
