@@ -13,11 +13,11 @@ $muted = (isset($_COOKIE['mute'])?$_COOKIE['mute']:0);
 	<meta charset="utf-8">
 	<title>Supervisord Monitoring</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link type="text/css" rel="stylesheet" href="<?php echo site_url('/css/bootstrap.min.css');?>"/>
-	<link type="text/css" rel="stylesheet" href="<?php echo site_url('/css/bootstrap-responsive.min.css');?>"/>
-	<link type="text/css" rel="stylesheet" href="<?php echo site_url('/css/custom.css');?>"/>
-<script type="text/javascript" src="<?php echo site_url('/js/jquery-1.10.1.min.js');?>"></script>
-<script type="text/javascript" src="<?php echo site_url('/js/bootstrap.min.js');?>"></script>
+	<link type="text/css" rel="stylesheet" href="<?php echo site_url('/public_html/css/bootstrap.min.css');?>"/>
+	<link type="text/css" rel="stylesheet" href="<?php echo site_url('/public_html/css/bootstrap-responsive.min.css');?>"/>
+	<link type="text/css" rel="stylesheet" href="<?php echo site_url('/public_html/css/custom.css');?>"/>
+<script type="text/javascript" src="<?php echo site_url('/public_html/js/jquery-1.10.1.min.js');?>"></script>
+<script type="text/javascript" src="<?php echo site_url('/public_html/js/bootstrap.min.js');?>"></script>
 	<noscript>
 	<?php
 	if($this->config->item('refresh')){ ?>
@@ -54,7 +54,7 @@ $muted = (isset($_COOKIE['mute'])?$_COOKIE['mute']:0);
     </div>
 	
 
-	<div class="container" style="margin-top: 40px">
+	<div class="container" style="margin-top: 40px" id="container">
 	
 		<?php
 		if($muted){
@@ -75,7 +75,7 @@ $muted = (isset($_COOKIE['mute'])?$_COOKIE['mute']:0);
                     }
                     $ui_url = $base_url . $parsed_url['host'] . ':' . $cfg[$name]['port']. '/';
 				?>
-				<table class="table table-bordered table-condensed table-striped">
+				<table class="table table-condensed">
 					<tr><th colspan="4">
 						<a href="<?php echo $ui_url; ?>"><?php echo $name; ?></a> <?php if($this->config->item('show_host')){ ?><i><?php echo $parsed_url['host']; ?></i><?php } ?>
 						<?php if(isset($cfg[$name]['username'])){echo '<i class="icon-lock icon-green" style="color:blue" title="Authenticated server connection"></i>';}?>
@@ -167,10 +167,11 @@ $muted = (isset($_COOKIE['mute'])?$_COOKIE['mute']:0);
 
     </div> <!-- /container -->
 	
-	<div class="footer">
+	<div class="footer" id="footer">
 		<p>Powered by <a href="https://github.com/mlazarov/supervisord-monitor" target="_blank">Supervisord Monitor</a> | Page rendered in <strong>{elapsed_time}</strong> seconds</p>
 	</div>
-	<script>
+
+    <script>
 	function show_content($param){
 		stopTimer();
 		$time = new Date();
@@ -215,7 +216,7 @@ $muted = (isset($_COOKIE['mute'])?$_COOKIE['mute']:0);
 		var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br ' + '/>' : '<br>';
 		return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
 	}
-	</script>
 
+    </script>
 </body>
 </html>
