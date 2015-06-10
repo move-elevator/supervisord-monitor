@@ -13,12 +13,13 @@ $muted = (isset($_COOKIE['mute'])?$_COOKIE['mute']:0);
 	<meta charset="utf-8">
 	<title>Supervisord Monitoring</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link type="text/css" rel="stylesheet" href="<?php echo site_url('/public_html/css/bootstrap.min.css');?>"/>
-	<link type="text/css" rel="stylesheet" href="<?php echo site_url('/public_html/css/bootstrap-responsive.min.css');?>"/>
-	<link type="text/css" rel="stylesheet" href="<?php echo site_url('/public_html/css/custom.css');?>"/>
-<script type="text/javascript" src="<?php echo site_url('/public_html/js/jquery-1.10.1.min.js');?>"></script>
-<script type="text/javascript" src="<?php echo site_url('/public_html/js/bootstrap.min.js');?>"></script>
-	<noscript>
+	<link type="text/css" rel="stylesheet" href="<?php echo site_url('/css/bootstrap.min.css');?>"/>
+    <link type="text/css" rel="stylesheet" href="<?php echo site_url('/css/bootstrap-responsive.min.css');?>"/>
+    <link type="text/css" rel="stylesheet" href="<?php echo site_url('/css/custom.css');?>"/>
+    <script type="text/javascript" src="<?php echo site_url('/js/jquery-1.10.1.min.js');?>"></script>
+    <script type="text/javascript" src="<?php echo site_url('/js/bootstrap.min.js');?>"></script>
+
+    <noscript>
 	<?php
 	if($this->config->item('refresh')){ ?>
 	<meta http-equiv="refresh" content="<?php echo $this->config->item('refresh');?>">
