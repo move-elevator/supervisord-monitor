@@ -67,6 +67,7 @@ $muted = (isset($_COOKIE['mute'])?$_COOKIE['mute']:0);
 		<div class="row">
 				<?php
 				$alert = false;
+
 				foreach($list as $name=>$procs){
 					$parsed_url = parse_url($cfg[$name]['url']);
                     if ( isset($cfg[$name]['username']) && isset($cfg[$name]['password']) ){
@@ -77,15 +78,22 @@ $muted = (isset($_COOKIE['mute'])?$_COOKIE['mute']:0);
                     $ui_url = $base_url . $parsed_url['host'] . ':' . $cfg[$name]['port']. '/';
 				?>
 				<table class="table table-condensed">
-					<tr><th colspan="4">
-						<a href="<?php echo $ui_url; ?>"><?php echo $name; ?></a> <?php if($this->config->item('show_host')){ ?><i><?php echo $parsed_url['host']; ?></i><?php } ?>
-						<?php if(isset($cfg[$name]['username'])){echo '<i class="icon-lock icon-green" style="color:blue" title="Authenticated server connection"></i>';}?>
-						<span class="server-btns text-center">
-							<a href="/control/stopall/<?php echo $name; ?>" class="btn btn-mini btn-inverse" type="button"><i class="icon-stop icon-white"></i> Stop all</a>
-							<a href="/control/startall/<?php echo $name; ?>" class="btn btn-mini btn-success" type="button"><i class="icon-play icon-white"></i> Start all</a>
-							<a href="/control/restartall/<?php echo $name; ?>" class="btn btn-mini btn-primary" type="button"><i class="icon icon-refresh icon-white"></i> Restart all</a>
-						</span>
-					</th></tr>
+					<tr>
+                        <th colspan="4">
+                            <a href="<?php echo $ui_url; ?>"><?php echo $name; ?></a> <?php if($this->config->item('show_host')){ ?><i><?php echo $parsed_url['host']; ?></i><?php } ?>
+                            <?php if(isset($cfg[$name]['username'])){echo '<i class="icon-lock icon-green" style="color:blue" title="Authenticated server connection"></i>';}?>
+                            <span class="server-btns text-center">
+                                <a href="/control/stopall/<?php echo $name; ?>" class="btn btn-mini btn-inverse" type="button"><i class="icon-stop icon-white"></i> Stop all</a>
+                                <a href="/control/startall/<?php echo $name; ?>" class="btn btn-mini btn-success" type="button"><i class="icon-play icon-white"></i> Start all</a>
+                                <a href="/control/restartall/<?php echo $name; ?>" class="btn btn-mini btn-primary" type="button"><i class="icon icon-refresh icon-white"></i> Restart all</a>
+                            </span>
+                        </th>
+                        <th>
+                            <button type="button" data-project="<?php echo md5($name); ?>" class="btn btn-success pull-right show-all">
+                                Alle Tasks anzeigen ⬇
+                            </button>
+                        </th>
+                    </tr>
 					<?php
 					$CI = &get_instance();
 					foreach($procs as $item){
@@ -110,10 +118,11 @@ $muted = (isset($_COOKIE['mute'])?$_COOKIE['mute']:0);
 						elseif($status=='STOPPED') $class = 'inverse';
 						else $class = 'error';
 
-						$uptime = str_replace("uptime ","",$uptime);
+                        $uptime = str_replace("uptime ","",$uptime);
 						?>
 
-						<tr class="<?php if($status === 'FATAL') { echo 'alert-tr'; } else { echo 'normal-tr'; } ?>">
+
+						<tr class="<?php if($status === 'FATAL') { echo 'alert-tr'; } elseif($check) {echo 'warning-tr'; } else { echo 'hide normal-tr ' . md5($name);  } ?>">
 							<td width="50%" style="width: 50%;"><?php
 								echo $item_name;
 								if($check){
@@ -217,6 +226,12 @@ $muted = (isset($_COOKIE['mute'])?$_COOKIE['mute']:0);
 		var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br ' + '/>' : '<br>';
 		return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
 	}
+
+
+    $( ".show-all" ).click(function() {
+        var project = $(this).data('project');
+        $( "." + project).toggleClass('hide');
+    });
 
     </script>
 </body>

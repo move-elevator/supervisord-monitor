@@ -73,6 +73,7 @@ body{
     background-image: linear-gradient(to bottom,#222,#111);
     background-repeat: repeat-x;
     color: #ffffff;
+    padding: 40px 20px 40px 25px;
 }
 
 .table th a {
@@ -95,6 +96,14 @@ body{
     animation-direction: alternate;
 }
 
+.warning-tr td {
+    background-color: #ff8412 !important;
+    animation-name: warning-bg;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
 .normal-tr td {
     background-color: #006400 !important;
 }
@@ -111,6 +120,12 @@ body{
 @keyframes alert-bg {
     from {background-color: #ff6d69;}
     to {background-color: rgba(255, 117, 112, 0.27);}
+}
+
+/* The animation code */
+@keyframes warning-bg {
+    from {background-color: #ff8412;}
+    to {background-color: rgba(255, 132, 18, 0.70);}
 }
 
 .pop {
@@ -158,4 +173,12 @@ body{
 
 .table th {
     border-top: none;
+}
+
+.hide {
+    display: none !important;
+}
+
+.popover-content {
+    font-size: 12px !important;
 }
