@@ -98,10 +98,6 @@ body{
 
 .warning-tr td {
     background-color: #ff8412 !important;
-    animation-name: warning-bg;
-    animation-duration: 3s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
 }
 
 .normal-tr td {
