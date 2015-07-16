@@ -1,0 +1,100 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("/images/background.png");
+    background-repeat: repeat;
+    background-color: #313131;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #ffffff;
+    overflow: hidden;
+    text-align: center;
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    margin: 30px 0 0 0;
+    padding: 0;
+    text-shadow: 1px 1px #000000;
+}
+
+.server {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: stretch;
+    position: absolute;
+    top: 80px;
+    left: 10px;
+    bottom: 0;
+    right: 0;
+}
+
+.full, .half {
+    display: flex;
+}
+
+.full {
+    width:100%;
+}
+
+.half {
+    width:50%;
+}
+
+.program {
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom:10px;
+    font-size: 2em;
+    box-shadow: 2px 2px 1px #000000;
+    width: 100%;
+    margin-right: 10px;
+    position: relative;
+}
+
+h2 {
+    margin: 0;
+    padding: 20px 0 5px 0;
+    text-shadow: 1px 1px #000000;
+}
+
+.pid, .uptime {
+    opacity: 0.5;
+    font-size: 0.7em;
+    font-weight: bold;
+}
+
+.uptime {
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+}
+
+.pid {
+    position: absolute;
+    left: 15px;
+    bottom: 15px;
+}
+
+.green {
+    background-color: #006400;
+}
+
+.red {
+    background-color: #8b0000;
+}
+
+.orange {
+    background-color: #F59400;
+}
