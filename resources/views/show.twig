@@ -1,0 +1,20 @@
+{% extends 'base.twig' %}
+
+{% block title %}{{ parent() }} - {{ server.name }}{% endblock %}
+
+{% block content %}
+<h1><a href="{{ server.url }}" target="_blank">{{ server.name }}</a></h1>
+<div class="server">
+    {% for process in processes %}
+    <div class="half">
+        <div class="program {{ process.status ? 'green' : 'red' }}">
+            <h2><a href="{{ server.url }}tail.html?processname={{ process.group }}:{{ process.name }}" target="_blank">{{ process.name }}</a></h2>
+            <span class="uptime">{{ process.uptime }}</span>
+            <span class="pid">pid {{ process.pid }}</span>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+<script src="/script.js" type="application/javascript"></script>
+{% endblock %}
+

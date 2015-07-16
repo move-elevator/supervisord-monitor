@@ -1,0 +1,7 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+    {% for id, server in servers %}
+        <h1><a href="/{{ id }}" target="_blank">{{ server.name }}</a></h1>
+    {% endfor %}
+{% endblock %}
