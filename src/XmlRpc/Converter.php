@@ -34,11 +34,7 @@ class Converter
         $servers = [];
 
         foreach ($serversData as $id => $serverData) {
-            $server = new Server();
-            $server->setName($serverData['name']);
-            $server->setUrl($serverData['url']);
-
-            $servers[$id] = $server;
+            $servers[$id] = $this->getServer($serverData);
         }
 
         return $servers;
