@@ -1,0 +1,7 @@
+servers:
+  id:
+    name: localhost
+    url: http://localhost:9001/
+    xmlRpcUrl: http://localhost:9001/RPC2
+    username: user
+    password: 123456
