@@ -51,7 +51,7 @@ class Converter
 
         foreach ($processesData as $processData) {
             $process = new Process();
-            $process->setStatus($this->getProcessStatus($processData['state']));
+            $process->setIsRunning($this->isRunning($processData['state']));
             $process->setName($processData['name']);
             $process->setGroup($processData['group']);
             $process->setUptime($this->getProcessUptime($processData['start'], $processData['now']));
@@ -68,7 +68,7 @@ class Converter
      *
      * @return bool
      */
-    private function getProcessStatus($state)
+    private function isRunning($state)
     {
         if (20 === intval($state)) {
             return true;

@@ -10,7 +10,7 @@ class Process
     /**
      * @var bool
      */
-    private $status = false;
+    private $isRunning = false;
 
     /**
      * @var int
@@ -33,19 +33,19 @@ class Process
     private $group;
 
     /**
-     * @return bool
+     * @return boolean
      */
-    public function getStatus()
+    public function isIsRunning()
     {
-        return $this->status;
+        return $this->isRunning;
     }
 
     /**
-     * @param bool $status
+     * @param boolean $isRunning
      */
-    public function setStatus($status)
+    public function setIsRunning($isRunning)
     {
-        $this->status = $status;
+        $this->isRunning = $isRunning;
     }
 
     /**

@@ -7,7 +7,7 @@
 <div class="server">
     {% for process in processes %}
     <div class="half">
-        <div class="program {{ process.status ? 'green' : 'red' }}">
+        <div class="program {{ process.isRunning ? 'green' : 'red' }}">
             <h2><a href="{{ server.url }}tail.html?processname={{ process.group }}:{{ process.name }}" target="_blank">{{ process.name }}</a></h2>
             <span class="uptime">{{ process.uptime }}</span>
             <span class="pid">pid {{ process.pid }}</span>
