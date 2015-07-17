@@ -1,8 +1,5 @@
 # supervisord-monitor
-
-## Features
-
-Supervisord Monitoring Tool. Display the processes administrated by Supervisord.
+Web-based dashboard for supervisord written in PHP with Silex.
 
 ![Screenshot] (https://raw.githubusercontent.com/move-elevator/supervisord-monitor/master/supervisord-monitor.png)
 
@@ -25,3 +22,4 @@ servers:
     username: user
     password: 123456
 ```
+
