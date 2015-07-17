@@ -3,6 +3,10 @@ Web-based dashboard for supervisord written in PHP with Silex.
 
 ![Screenshot] (https://raw.githubusercontent.com/move-elevator/supervisord-monitor/master/supervisord-monitor.png)
 
+## Dependencies
+
+Supervisord has a [XmlRpc Api](http://supervisord.org/api.html). First you have to install [XmlRpc for PHP](http://php.net/manual/de/book.xmlrpc.php).
+
 ## Installation
 
 Clone supervisord-monitor via ```git```:
