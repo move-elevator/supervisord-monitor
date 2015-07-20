@@ -15,7 +15,7 @@ Clone supervisord-monitor via ```git```:
 git clone https://github.com/move-elevator/supervisord-monitor.git
 ```
 
-Copy the ```app/config.yaml.dist``` file to ```app/config.yaml``` and add your servers:
+Copy the ```app/config.yml.dist``` file to ```app/config.yml``` and add your servers:
 
 ```
 servers:
