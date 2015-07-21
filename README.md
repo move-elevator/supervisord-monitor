@@ -1,14 +1,14 @@
 # supervisord-monitor
-Web-based dashboard for supervisord written in PHP with [Silex](silex.sensiolabs.org){:target="_blank"}.
+Web-based dashboard for supervisord written in PHP with [Silex](silex.sensiolabs.org).
 
 ![Screenshot] (https://raw.githubusercontent.com/move-elevator/supervisord-monitor/master/examples/supervisord-monitor.png)
 
 ## Requirements
 
-[supervisor](http://supervisord.org/){:target="_blank"} has a [xmlrpc API](http://supervisord.org/api.html){:target="_blank"}. 
-So sure that you have installed [xmlrpc for PHP](http://php.net/manual/de/book.xmlrpc.php){:target="_blank"}.
+[supervisor](http://supervisord.org/) has a [xmlrpc API](http://supervisord.org/api.html). 
+So sure that you have installed [xmlrpc for PHP](http://php.net/manual/de/book.xmlrpc.php).
 
-You also need [composer](https://getcomposer.org/){:target="_blank"}.
+You also need [composer](https://getcomposer.org/).
 
 ## Installation
 
