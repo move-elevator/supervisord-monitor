@@ -1,0 +1,17 @@
+{% extends 'base.twig' %}
+
+{% block title %}{{ parent() }} - Error{% endblock %}
+
+{% block content %}
+    <h1>Server is not available</h1>
+    <script type="application/javascript">
+        setInterval(function(){
+            document.body.style.backgroundImage = 'none';
+            if ('red' == document.body.style.backgroundColor) {
+                document.body.style.backgroundColor = 'blue';
+            } else {
+                document.body.style.backgroundColor = 'red';
+            }
+        }, 700);
+    </script>
+{% endblock %}

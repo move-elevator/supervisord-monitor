@@ -57,7 +57,8 @@ class Client
         return stream_context_create(['http' => [
             'method' => 'POST',
             'header' => $this->getHeader($username, $password),
-            'content' => $this->getRequest()
+            'content' => $this->getRequest(),
+            'timeout' => 5
         ]]);
     }
 

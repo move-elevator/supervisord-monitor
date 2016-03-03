@@ -37,9 +37,15 @@ $app->get('/', function () use ($app) {
 });
 
 $app->get('/{id}', function ($id) use ($app) {
+    $processes = $app['xmlrpc.client']->getProcesses($id);
+
+    if (false === is_array($processes)) {
+        return $app['twig']->render('error.twig');
+    }
+
     return $app['twig']->render('show.twig', [
         'server' => $app['xmlrpc.converter']->getServer($app['xmlrpc.parser']->getServer($id)),
-        'processes' => $app['xmlrpc.converter']->getProcesses($app['xmlrpc.client']->getProcesses($id)),
+        'processes' => $app['xmlrpc.converter']->getProcesses($processes),
     ]);
 });
 
